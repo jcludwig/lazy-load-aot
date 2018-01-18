@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, SystemJsNgModuleLoader } from '@angular/core';
 
 import { LazyComponent } from './lazy.component';
@@ -7,10 +7,16 @@ import { LazyComponent } from './lazy.component';
   declarations: [
     LazyComponent
   ],
+  exports: [
+    LazyComponent
+  ],
   imports: [
-    BrowserModule
+    // TODO: needs to be in "common modules"
+    // BrowserModule
   ],
   providers: [],
-//   bootstrap: []
+  
+  // NOTE: required in order to get NgFactory for the component to show up in the bundle.
+  bootstrap: [LazyComponent]
 })
 export class LazyModule { }
