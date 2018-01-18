@@ -17,6 +17,7 @@ import { LazyComponent } from './lazy.component';
   providers: [],
   
   // NOTE: required in order to get NgFactory for the component to show up in the bundle.
-  bootstrap: [LazyComponent]
+  // bootstrap: [LazyComponent]
+  entryComponents: [LazyComponent],
 })
 export class LazyModule { }
