@@ -27,8 +27,8 @@ module.exports = {
         rules: [
             {
                 test: /\.ts$/,
-                // use: [ 'awesome-typescript-loader?configFileName=config/tsconfig.json', 'angular2-template-loader' ]
-                use: '@ngtools/webpack',
+                use: [ 'awesome-typescript-loader?configFileName=config/tsconfig.json', 'angular2-template-loader' ]
+                // use: '@ngtools/webpack',
             },
             {
                 test: /\.html$/,
@@ -52,14 +52,14 @@ module.exports = {
         // new webpack.WatchIgnorePlugin([
         //     path.resolve(dirname, "obj") // ignore generating folder so as to prevent from infinite loop while watching 
         // ]),
-        new ngtools.AngularCompilerPlugin({
-            basePath: './',
-            tsConfigPath: './tsconfig.json',
-            mainPath: './main.ts',
-            skipCodeGeneration: false /*true - dev, false - prod*/,
-            // hostReplacementPaths: {
-            //     'environments/environment.ts': fast ? 'environments/environment.ts' : 'environments/environment.prod.ts'
-            // }
-        }),
+        // new ngtools.AngularCompilerPlugin({
+        //     basePath: './',
+        //     tsConfigPath: './tsconfig.json',
+        //     mainPath: './main.ts',
+        //     skipCodeGeneration: false /*true - dev, false - prod*/,
+        //     // hostReplacementPaths: {
+        //     //     'environments/environment.ts': fast ? 'environments/environment.ts' : 'environments/environment.prod.ts'
+        //     // }
+        // }),
     ]
 };

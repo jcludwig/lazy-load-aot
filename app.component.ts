@@ -18,8 +18,8 @@ export class AppComponent {
   public async loadLazyModule(): Promise<any> {
     // -- Webpack correctly produces a different chunk for this, but it does not include NgFactories.
     // -- NGC does not follow these paths, no .ngfactory files are produced.
-    let module = await System.import('lazy.module');
-    return module;
+    let moduleFactory = await System.import('./lazy.module.ngfactory');
+    return moduleFactory;
 
     // -- Webpack correctly produces a different chunk for this, but it does not include NgFactories.
     // -- NGC correctly follows this import and creates ngfactory files
